@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    级联赋值-->
+    <bean id="emp" class="com.enterprise.Emp">
+        <property name="ename" value="lucy"/>
+        <property name="gender" value="female"/>
+        <property name="dept" ref="dept"/>
+<!--        级联赋值，需要get方法-->
+        <property name="dept.dname" value="技术部"/>
+    </bean>
+    <bean id="dept" class="com.enterprise.Dept">
+        <property name="dname" value="财务部"/>
+    </bean>
+</beans>
